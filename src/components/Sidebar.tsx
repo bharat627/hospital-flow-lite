@@ -25,37 +25,37 @@ const Sidebar = () => {
   const menuItems = [
     {
       title: "Dashboard",
-      path: "/",
+      path: "/staff",
       icon: <Home className="h-5 w-5" />,
     },
     {
       title: "Patients",
-      path: "/patients",
+      path: "/staff/patients",
       icon: <Users className="h-5 w-5" />,
     },
     {
       title: "Doctors",
-      path: "/doctors",
+      path: "/staff/doctors",
       icon: <UserRound className="h-5 w-5" />,
     },
     {
       title: "Medical Records",
-      path: "/medical-records",
+      path: "/staff/medical-records",
       icon: <FileText className="h-5 w-5" />,
     },
     {
       title: "Appointments",
-      path: "/appointments",
+      path: "/staff/appointments",
       icon: <Calendar className="h-5 w-5" />,
     },
     {
       title: "Inquiries",
-      path: "/inquiries",
+      path: "/staff/inquiries",
       icon: <MessageSquare className="h-5 w-5" />,
     },
     {
       title: "Settings",
-      path: "/settings",
+      path: "/staff/settings",
       icon: <Settings className="h-5 w-5" />,
     },
   ];

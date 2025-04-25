@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -37,7 +36,7 @@ const InquiryForm = () => {
       <div className="space-y-2">
         <Label htmlFor="email">Email</Label>
         <div className="relative">
-          <mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 h-4 w-4" />
+          <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 h-4 w-4" />
           <Input
             id="email"
             type="email"
