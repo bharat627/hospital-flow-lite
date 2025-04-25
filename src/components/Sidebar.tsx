@@ -9,6 +9,8 @@ import {
   Settings,
   Menu,
   X,
+  Calendar,
+  MessageSquare,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -40,6 +42,16 @@ const Sidebar = () => {
       title: "Medical Records",
       path: "/medical-records",
       icon: <FileText className="h-5 w-5" />,
+    },
+    {
+      title: "Appointments",
+      path: "/appointments",
+      icon: <Calendar className="h-5 w-5" />,
+    },
+    {
+      title: "Inquiries",
+      path: "/inquiries",
+      icon: <MessageSquare className="h-5 w-5" />,
     },
     {
       title: "Settings",
