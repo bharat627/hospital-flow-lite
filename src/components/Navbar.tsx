@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Bell, Search } from "lucide-react";
+import { Bell, Search, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -12,8 +12,17 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
+import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const handleSwitchToPatient = () => {
+    navigate("/patient/appointments");
+    toast("Switched to Patient Portal");
+  };
+
   return (
     <header className="h-16 border-b border-border bg-white flex items-center px-6">
       <div className="w-full flex items-center justify-between">
@@ -25,6 +34,14 @@ const Navbar = () => {
           />
         </div>
         <div className="flex items-center space-x-4">
+          <Button 
+            variant="outline"
+            onClick={handleSwitchToPatient}
+            className="flex items-center gap-2"
+          >
+            <Users className="h-4 w-4" />
+            <span>Switch to Patient Portal</span>
+          </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" className="relative">

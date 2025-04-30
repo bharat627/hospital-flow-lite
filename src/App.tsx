@@ -37,11 +37,12 @@ const App = () => (
 
           {/* Patient Interface */}
           <Route path="/patient" element={<PatientLayout />}>
+            <Route index element={<Navigate to="/patient/appointments" replace />} />
             <Route path="appointments" element={<Appointments />} />
             <Route path="inquiries" element={<Inquiries />} />
           </Route>
 
-          {/* Redirect root to patient interface */}
+          {/* Landing page - User can choose interface */}
           <Route path="/" element={<Navigate to="/patient/appointments" replace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

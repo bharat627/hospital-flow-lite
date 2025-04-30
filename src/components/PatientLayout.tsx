@@ -1,10 +1,18 @@
 
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
 import { Calendar, MessageSquare } from "lucide-react";
+import { toast } from "sonner";
 
 const PatientLayout = () => {
+  const navigate = useNavigate();
+
+  const handleSwitchToStaff = () => {
+    navigate("/staff");
+    toast("Switched to Staff Portal");
+  };
+
   return (
     <div className="min-h-screen bg-blue-50">
       <header className="bg-white border-b border-border">
@@ -45,7 +53,9 @@ const PatientLayout = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <Button variant="outline">Switch to Staff Portal</Button>
+                  <Button variant="outline" onClick={handleSwitchToStaff}>
+                    Switch to Staff Portal
+                  </Button>
                 </li>
               </ul>
             </nav>
