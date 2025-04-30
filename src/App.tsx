@@ -16,6 +16,7 @@ import Layout from "./components/Layout";
 import PatientLayout from "./components/PatientLayout";
 import AuthGuard from "./components/AuthGuard";
 import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
 
 const queryClient = new QueryClient();
 
@@ -26,8 +27,9 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          {/* Login Route */}
+          {/* Login and SignUp Routes */}
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
           
           {/* Protected Hospital Staff Interface */}
           <Route element={<AuthGuard />}>
