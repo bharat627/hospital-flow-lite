@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Bell, Search, Users } from "lucide-react";
+import { Bell, Search, Users, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -23,14 +23,20 @@ const Navbar = () => {
     toast("Switched to Patient Portal");
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("staffAuth");
+    toast("Logged out successfully");
+    navigate("/login");
+  };
+
   return (
     <header className="h-16 border-b border-border bg-white flex items-center px-6">
       <div className="w-full flex items-center justify-between">
-        <div className="relative w-72">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+        <div className="md:w-64 lg:w-72">
           <Input 
             placeholder="Search..." 
-            className="pl-10 bg-muted/40"
+            className="max-w-xs" 
+            startIcon={<Search className="h-4 w-4 text-muted-foreground" />}
           />
         </div>
         <div className="flex items-center space-x-4">
@@ -42,52 +48,57 @@ const Navbar = () => {
             <Users className="h-4 w-4" />
             <span>Switch to Patient Portal</span>
           </Button>
+          <Button 
+            variant="outline"
+            onClick={handleLogout}
+            className="flex items-center gap-2"
+          >
+            <LogOut className="h-4 w-4" />
+            <span>Log Out</span>
+          </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" className="relative">
                 <Bell className="h-5 w-5" />
-                <span className="absolute top-0 right-0 h-2 w-2 bg-red-500 rounded-full"></span>
+                <span className="absolute top-1 right-1.5 w-2 h-2 bg-red-500 rounded-full"></span>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-80">
+            <DropdownMenuContent align="end">
               <DropdownMenuLabel>Notifications</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem className="p-4 cursor-pointer">
-                <div className="space-y-1">
-                  <p className="text-sm font-medium leading-none">New patient registered</p>
-                  <p className="text-sm text-muted-foreground">A new patient has been registered. Review their details.</p>
-                  <p className="text-xs text-muted-foreground">2 minutes ago</p>
+              <DropdownMenuItem>
+                <div className="flex flex-col">
+                  <span className="font-semibold">New appointment request</span>
+                  <span className="text-xs text-gray-600">5 mins ago</span>
                 </div>
               </DropdownMenuItem>
-              <DropdownMenuItem className="p-4 cursor-pointer">
-                <div className="space-y-1">
-                  <p className="text-sm font-medium leading-none">Doctor schedule updated</p>
-                  <p className="text-sm text-muted-foreground">Dr. Sarah Johnson updated her availability.</p>
-                  <p className="text-xs text-muted-foreground">1 hour ago</p>
+              <DropdownMenuItem>
+                <div className="flex flex-col">
+                  <span className="font-semibold">Lab results ready</span>
+                  <span className="text-xs text-gray-600">1 hour ago</span>
                 </div>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="relative flex items-center space-x-2" size="sm">
-                <Avatar className="h-8 w-8">
-                  <AvatarImage src="/placeholder.svg" alt="Avatar" />
-                  <AvatarFallback>AD</AvatarFallback>
+              <Button variant="ghost" className="relative h-9 w-9 rounded-full">
+                <Avatar className="h-9 w-9">
+                  <AvatarImage src="/placeholder.svg" alt="@user" />
+                  <AvatarFallback>DR</AvatarFallback>
                 </Avatar>
-                <div className="flex flex-col items-start">
-                  <span className="text-sm font-medium">Admin User</span>
-                  <span className="text-xs text-muted-foreground">Administrator</span>
-                </div>
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuLabel>Dr. Smith</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem>Profile</DropdownMenuItem>
               <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Log out</DropdownMenuItem>
+              <DropdownMenuItem onClick={handleLogout}>
+                <LogOut className="h-4 w-4 mr-2" />
+                Logout
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

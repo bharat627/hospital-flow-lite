@@ -14,6 +14,8 @@ import Inquiries from "./pages/Inquiries";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
 import PatientLayout from "./components/PatientLayout";
+import AuthGuard from "./components/AuthGuard";
+import Login from "./pages/Login";
 
 const queryClient = new QueryClient();
 
@@ -24,15 +26,20 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          {/* Hospital Staff Interface */}
-          <Route path="/staff" element={<Layout />}>
-            <Route index element={<Dashboard />} />
-            <Route path="patients" element={<Patients />} />
-            <Route path="doctors" element={<Doctors />} />
-            <Route path="medical-records" element={<MedicalRecords />} />
-            <Route path="settings" element={<Settings />} />
-            <Route path="appointments" element={<Appointments />} />
-            <Route path="inquiries" element={<Inquiries />} />
+          {/* Login Route */}
+          <Route path="/login" element={<Login />} />
+          
+          {/* Protected Hospital Staff Interface */}
+          <Route element={<AuthGuard />}>
+            <Route path="/staff" element={<Layout />}>
+              <Route index element={<Dashboard />} />
+              <Route path="patients" element={<Patients />} />
+              <Route path="doctors" element={<Doctors />} />
+              <Route path="medical-records" element={<MedicalRecords />} />
+              <Route path="settings" element={<Settings />} />
+              <Route path="appointments" element={<Appointments />} />
+              <Route path="inquiries" element={<Inquiries />} />
+            </Route>
           </Route>
 
           {/* Patient Interface */}

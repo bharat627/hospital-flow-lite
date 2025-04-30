@@ -9,8 +9,16 @@ const PatientLayout = () => {
   const navigate = useNavigate();
 
   const handleSwitchToStaff = () => {
-    navigate("/staff");
-    toast("Switched to Staff Portal");
+    // Check if already authenticated
+    const isAuthenticated = localStorage.getItem("staffAuth") === "true";
+    
+    if (isAuthenticated) {
+      navigate("/staff");
+      toast("Switched to Staff Portal");
+    } else {
+      navigate("/login");
+      toast("Please login to access the Staff Portal");
+    }
   };
 
   return (
