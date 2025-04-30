@@ -22,7 +22,7 @@ const Login = () => {
     
     // Hardcoded credentials check
     setTimeout(() => {
-      if (username === "Diamondhospital@1" && password === "dimond@2131") {
+      if (username === "Diamondhospital@1" && password === "Diamond@2131") {
         // Store authentication state in localStorage
         localStorage.setItem("staffAuth", "true");
         toast("Login successful");

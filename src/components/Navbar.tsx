@@ -33,11 +33,13 @@ const Navbar = () => {
     <header className="h-16 border-b border-border bg-white flex items-center px-6">
       <div className="w-full flex items-center justify-between">
         <div className="md:w-64 lg:w-72">
-          <Input 
-            placeholder="Search..." 
-            className="max-w-xs" 
-            startIcon={<Search className="h-4 w-4 text-muted-foreground" />}
-          />
+          <div className="relative max-w-xs">
+            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+            <Input 
+              placeholder="Search..." 
+              className="pl-8 max-w-xs" 
+            />
+          </div>
         </div>
         <div className="flex items-center space-x-4">
           <Button 
