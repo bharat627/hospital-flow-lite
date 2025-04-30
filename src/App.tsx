@@ -17,6 +17,7 @@ import PatientLayout from "./components/PatientLayout";
 import AuthGuard from "./components/AuthGuard";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import PatientSignUp from "./pages/PatientSignUp";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
           {/* Login and SignUp Routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/patient-signup" element={<PatientSignUp />} />
           
           {/* Protected Hospital Staff Interface */}
           <Route element={<AuthGuard />}>

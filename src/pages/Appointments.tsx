@@ -1,6 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import AppointmentForm from "@/components/AppointmentForm";
+import { Link } from "react-router-dom";
 
 const Appointments = () => {
   return (
@@ -15,6 +16,9 @@ const Appointments = () => {
       <Card>
         <CardHeader>
           <CardTitle>Appointment Request Form</CardTitle>
+          <div className="text-sm text-muted-foreground">
+            New patient? <Link to="/patient-signup" className="text-blue-600 hover:underline">Create an account</Link> for faster booking
+          </div>
         </CardHeader>
         <CardContent>
           <AppointmentForm />

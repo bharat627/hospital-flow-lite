@@ -16,6 +16,7 @@ import { useToast } from "@/components/ui/use-toast";
 const AppointmentForm = () => {
   const [date, setDate] = useState("");
   const [doctor, setDoctor] = useState("");
+  const [hospital, setHospital] = useState("");
   const [reason, setReason] = useState("");
   const { toast } = useToast();
 
@@ -29,6 +30,20 @@ const AppointmentForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="space-y-2">
+        <Label htmlFor="hospital">Select Hospital</Label>
+        <Select value={hospital} onValueChange={setHospital}>
+          <SelectTrigger>
+            <SelectValue placeholder="Choose a hospital" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="diamond-hospital">Diamond Hospital</SelectItem>
+            <SelectItem value="central-medical">Central Medical Center</SelectItem>
+            <SelectItem value="mercy-hospital">Mercy Hospital</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
       <div className="space-y-2">
         <Label htmlFor="doctor">Select Doctor</Label>
         <Select value={doctor} onValueChange={setDoctor}>
