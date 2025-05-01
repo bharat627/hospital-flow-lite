@@ -80,6 +80,9 @@ const Navbar = () => {
                   <span className="text-xs text-gray-600">1 hour ago</span>
                 </div>
               </DropdownMenuItem>
+              <DropdownMenuItem className="text-blue-600 justify-center">
+                View all notifications
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
           <DropdownMenu>
