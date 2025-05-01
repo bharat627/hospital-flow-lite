@@ -52,7 +52,7 @@ interface Patient {
 const initialPatients: Patient[] = [
   {
     id: "1",
-    name: "John Doe",
+    name: "Arjun Patel",
     gender: "Male",
     age: 45,
     contactNumber: "(123) 456-7890",
@@ -62,7 +62,7 @@ const initialPatients: Patient[] = [
   },
   {
     id: "2",
-    name: "Jane Smith",
+    name: "Priya Sharma",
     gender: "Female",
     age: 32,
     contactNumber: "(456) 789-0123",
@@ -72,7 +72,7 @@ const initialPatients: Patient[] = [
   },
   {
     id: "3",
-    name: "Robert Johnson",
+    name: "Rajesh Kumar",
     gender: "Male",
     age: 56,
     contactNumber: "(789) 012-3456",
@@ -82,7 +82,7 @@ const initialPatients: Patient[] = [
   },
   {
     id: "4",
-    name: "Sarah Williams",
+    name: "Anjali Verma",
     gender: "Female",
     age: 28,
     contactNumber: "(012) 345-6789",
@@ -92,7 +92,7 @@ const initialPatients: Patient[] = [
   },
   {
     id: "5",
-    name: "Michael Brown",
+    name: "Vikram Singh",
     gender: "Male",
     age: 39,
     contactNumber: "(234) 567-8901",
@@ -102,7 +102,7 @@ const initialPatients: Patient[] = [
   },
   {
     id: "6",
-    name: "Emily Davis",
+    name: "Neha Gupta",
     gender: "Female",
     age: 51,
     contactNumber: "(345) 678-9012",

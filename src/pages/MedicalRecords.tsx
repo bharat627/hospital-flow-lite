@@ -50,7 +50,7 @@ interface MedicalRecord {
 const initialRecords: MedicalRecord[] = [
   {
     id: "1",
-    patientName: "John Doe",
+    patientName: "Arjun Patel",
     patientId: "P-1001",
     recordType: "Consultation",
     date: "2023-07-15",
@@ -64,7 +64,7 @@ const initialRecords: MedicalRecord[] = [
   },
   {
     id: "2",
-    patientName: "Jane Smith",
+    patientName: "Priya Sharma",
     patientId: "P-1002",
     recordType: "Lab Result",
     date: "2023-07-10",
@@ -78,7 +78,7 @@ const initialRecords: MedicalRecord[] = [
   },
   {
     id: "3",
-    patientName: "Robert Johnson",
+    patientName: "Rajesh Kumar",
     patientId: "P-1003",
     recordType: "Surgery",
     date: "2023-07-05",
@@ -92,7 +92,7 @@ const initialRecords: MedicalRecord[] = [
   },
   {
     id: "4",
-    patientName: "Sarah Williams",
+    patientName: "Anjali Verma",
     patientId: "P-1004",
     recordType: "Consultation",
     date: "2023-07-12",
@@ -106,7 +106,7 @@ const initialRecords: MedicalRecord[] = [
   },
   {
     id: "5",
-    patientName: "Michael Brown",
+    patientName: "Vikram Singh",
     patientId: "P-1005",
     recordType: "Lab Result",
     date: "2023-07-08",
