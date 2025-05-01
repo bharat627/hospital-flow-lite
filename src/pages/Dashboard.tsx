@@ -187,15 +187,46 @@ const Dashboard = () => {
                 </div>
               </div>
               <div className="divide-y divide-border">
-                {[1, 2, 3, 4, 5].map((i) => (
+                {[
+                  {
+                    name: "Rahul Mehta",
+                    date: "2023-07-11",
+                    doctor: "Dr. Priya Verma",
+                    status: "Active"
+                  },
+                  {
+                    name: "Ananya Desai",
+                    date: "2023-07-12",
+                    doctor: "Dr. Rajesh Kumar",
+                    status: "Active"
+                  },
+                  {
+                    name: "Nikhil Sharma",
+                    date: "2023-07-13",
+                    doctor: "Dr. Meera Patel",
+                    status: "Active"
+                  },
+                  {
+                    name: "Kavita Agarwal",
+                    date: "2023-07-14",
+                    doctor: "Dr. Vikram Singh",
+                    status: "Active"
+                  },
+                  {
+                    name: "Deepak Gupta",
+                    date: "2023-07-15",
+                    doctor: "Dr. Neha Reddy",
+                    status: "Active"
+                  }
+                ].map((patient, i) => (
                   <div className="p-4" key={i}>
                     <div className="grid grid-cols-4 gap-4">
-                      <div>John Doe</div>
-                      <div>2023-07-{10 + i}</div>
-                      <div>Dr. Sarah Johnson</div>
+                      <div>{patient.name}</div>
+                      <div>{patient.date}</div>
+                      <div>{patient.doctor}</div>
                       <div>
                         <span className="inline-flex items-center rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-medium text-emerald-800">
-                          Active
+                          {patient.status}
                         </span>
                       </div>
                     </div>
@@ -214,26 +245,26 @@ const Dashboard = () => {
             <div className="space-y-6">
               {[
                 {
-                  patient: "Michael Brown",
-                  doctor: "Dr. James Wilson",
+                  patient: "Aryan Reddy",
+                  doctor: "Dr. Rajesh Kumar",
                   time: "10:00 AM",
                   department: "Cardiology",
                 },
                 {
-                  patient: "Emily Davis",
-                  doctor: "Dr. Sarah Johnson",
+                  patient: "Shreya Malhotra",
+                  doctor: "Dr. Priya Verma",
                   time: "11:30 AM",
                   department: "Neurology",
                 },
                 {
-                  patient: "Robert Miller",
-                  doctor: "Dr. Lisa Anderson",
+                  patient: "Aditya Nair",
+                  doctor: "Dr. Anjali Desai",
                   time: "2:15 PM",
                   department: "Orthopedics",
                 },
                 {
-                  patient: "Jennifer White",
-                  doctor: "Dr. David Lee",
+                  patient: "Ishita Patel",
+                  doctor: "Dr. Sanjay Gupta",
                   time: "3:45 PM",
                   department: "Pediatrics",
                 },
